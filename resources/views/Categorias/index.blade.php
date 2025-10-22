@@ -18,8 +18,7 @@
                 <th>ID</th>
                 <th>Nombre</th>
                 <th>Descripción</th>
-                <th>Cantidad de Productos</th>
-                <th>Acciones</th>
+                <th>------</th>
             </tr>
         </thead>
         <tbody>
@@ -28,7 +27,6 @@
                 <td>{{ $categoria->id }}</td>
                 <td>{{ $categoria->nombre }}</td>
                 <td>{{ $categoria->descripcion }}</td>
-                <td>{{ $categoria->productos_count }}</td>
                 <td>
                     <a href="{{ route('categorias.edit', $categoria->id) }}" class="btn btn-primary btn-sm">Editar</a>
                     <form action="{{ route('categorias.destroy', $categoria->id) }}" method="POST" style="display:inline;">

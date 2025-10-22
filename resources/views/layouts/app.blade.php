@@ -16,10 +16,7 @@
 <nav class="navbar navbar-expand-lg bg-light shadow-sm">
     <div class="container-fluid px-4">
         <a class="navbar-brand" href="{{ url('/') }}">Mary Kay Digital</a>
-        <div class="ms-auto">
-            <a href="{{ route('productos.index') }}" class="btn btn-outline-dark me-2">Productos</a>
-            <a href="{{ route('tienda.consultora') }}" class="btn btn-rosado me-2">Tienda Consultora</a>
-        </div>
+        
     </div>
 </nav>
 

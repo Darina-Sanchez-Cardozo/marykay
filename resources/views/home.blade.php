@@ -1,3 +1,13 @@
+@extends('layouts.app')
+
+@section('content')
+<div class="container mt-5 text-center">
+  <h2 class="fw-bold mb-3">Bienvenido a Mary Kay Digital 💄</h2>
+  <p class="text-muted mb-4">Explora nuestras categorías y productos disponibles.</p>
+  <a href="{{ url('/tienda-categorias') }}" class="btn btn-dark">Ir a la tienda</a>
+</div>
+@endsection
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
