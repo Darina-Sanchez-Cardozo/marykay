@@ -16,6 +16,7 @@
                 <th>ID</th>
                 <th>Nombre</th>
                 <th>Código</th>
+                <th>Descripción</th> 
                 <th>Precio Mayoreo</th>
                 <th>Precio Menudeo</th>
                 <th>Existencias</th>
@@ -31,6 +32,7 @@
                 <td>{{ $producto->id }}</td>
                 <td>{{ $producto->nombre }}</td>
                 <td>{{ $producto->codigo_barras }}</td>
+                <td>{{ $producto->descripcion ?? 'Sin descripción' }}</td> 
                 <td>${{ number_format($producto->precio_mayoreo, 2) }}</td>
                 <td>${{ number_format($producto->precio_menudeo, 2) }}</td>
                 <td>{{ $producto->existencias }}</td>
@@ -40,7 +42,8 @@
                 <td>
                     <a href="{{ route('productos.edit', $producto->id) }}" class="btn btn-primary btn-sm">Editar</a>
                     <form action="{{ route('productos.destroy', $producto->id) }}" method="POST" style="display:inline;">
-                        @csrf @method('DELETE')
+                        @csrf 
+                        @method('DELETE')
                         <button class="btn btn-danger btn-sm" onclick="return confirm('¿Eliminar producto?')">Eliminar</button>
                     </form>
                 </td>

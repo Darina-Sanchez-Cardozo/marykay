@@ -5,21 +5,17 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Campania extends Model
+class AsignaResena extends Model
 {
     use HasFactory;
 
-    protected $table = 'campanias';
-
+    protected $table = 'AsignaReseña';
     protected $fillable = [
-        'nombre',
-        'fecha_inicio',
-        'fecha_fin',
-        'estado',
+        'venta_cliente_id',
+        'venta_consultora_id',
+        'reseña',
+        'puntaje',
+        'fecha'
     ];
-
     public $timestamps = false;
 }
-
-
-

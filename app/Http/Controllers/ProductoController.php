@@ -28,22 +28,22 @@ class ProductoController extends Controller
     }
 
     // Guardar producto
-    public function store(Request $request)
-    {
-        $request->validate([
-            'nombre' => 'required|string|max:100',
-            'codigo_barras' => 'required|string|unique:Productos',
-            'precio_mayoreo' => 'required|numeric',
-            'precio_menudeo' => 'required|numeric',
-            'existencias' => 'required|integer',
-            'estado_producto' => 'required',
+   public function store(Request $request)
+{
+    $request->validate([
+        'nombre' => 'required|string|max:100',
+        'codigo_barras' => 'required|string|unique:productos',
+        'precio_mayoreo' => 'required|numeric',
+        'precio_menudeo' => 'required|numeric',
+        'existencias' => 'required|integer',
+        'estado_producto' => 'required',
+        'descripcion' => 'nullable|string|max:100', 
+    ]);
 
-        ]);
-       Producto::create($request->all());
+    Producto::create($request->all());
 
     return redirect()->route('productos.index')
-        ->with('success', 'Producto registrado correctamente.');
-    }
+        ->with('success', 'Producto registrado correctamente.');}
 
     // Formulario para editar
     public function edit($id)
