@@ -40,6 +40,7 @@
                 <td>{{ $producto->categoria->nombre ?? 'Sin categoría' }}</td>
                 <td>{{ $producto->campania->nombre ?? 'Sin campaña' }}</td>
                 <td>
+                    <a href="{{ route('productos.detalle', $producto->id) }}" class="btn btn-info btn-sm"> Ver detalle</a>
                     <a href="{{ route('productos.edit', $producto->id) }}" class="btn btn-primary btn-sm">Editar</a>
                     <form action="{{ route('productos.destroy', $producto->id) }}" method="POST" style="display:inline;">
                         @csrf 

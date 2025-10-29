@@ -22,4 +22,14 @@ class VentaCliente extends Model
     {
         return $this->hasMany(AsignaResena::class, 'venta_cliente_id');
     }
+    public function cliente()
+    {
+        return $this->belongsTo(Cliente::class, 'cliente_id');
+    }
+
+    public function detalles()
+    {
+        return $this->hasMany(DetalleVenta::class, 'venta_cliente_id');
+    }
+
 }

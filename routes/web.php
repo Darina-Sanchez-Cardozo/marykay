@@ -7,10 +7,19 @@ use App\Http\Controllers\TiendaController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CampaniaController;
 use App\Http\Controllers\ResenaController;
+use App\Http\Controllers\EntradaController;
+use App\Http\Controllers\ProductoDetalleController;
 
 Route::get('/', function () {
     return view('home');
 });
+
+///detalles del producto-compra
+Route::get('/productos/detalle/{id}', [ProductoDetalleController::class, 'show'])
+    ->name('productos.detalle');
+    
+///entrada al almacen de productos, registro
+Route::resource('entradas', EntradaController::class);
 
 // Página de la tienda consultora
 Route::get('/tienda-consultora', [ProductoController::class, 'mostrarTienda'])->name('tienda.consultora');
@@ -30,6 +39,8 @@ Route::get('/mis-compras', [ResenaController::class, 'index'])->name('compras.in
 // Guardar reseña
 Route::post('/mis-compras/resena', [ResenaController::class, 'store'])->name('resenas.store');
 
+////vistas de campañas
+Route::resource('campanias', App\Http\Controllers\CampaniaController::class);
 
 ////inicio de sesion
 
